@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import Day from './Day';
+import {connect} from "react-redux";
+import { choseDate } from '../store/actions'
 
 class Calendar extends Component {
     constructor(props) {
@@ -44,7 +46,7 @@ class Calendar extends Component {
     }
 
     handleClick(date) {
-        alert(date)
+        this.props.choseDate(date)
     }
 
     previous() {
@@ -200,4 +202,8 @@ Calendar.propTypes = {
     dayOfWeekFormat: PropTypes.string,
 };
 
-export default Calendar;
+const mapDispatchToProps = {
+    choseDate
+}
+
+export default connect(null, mapDispatchToProps)(Calendar)

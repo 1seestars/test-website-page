@@ -1,14 +1,16 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import Home from '../components/Home'
-import About from '../components/About'
+import HomePage from '../components/HomePage'
+import AboutPage from '../components/AboutPage'
+import NavBar from "../components/NavBar";
 
 const Root = ({ store }) => (
     <Provider store={store}>
         <Router>
-            <Route exact path="/" component={Home} />
-            <Route path='/about' component={About} />
+            <NavBar/>
+            <Route exact path="/" component={HomePage} />
+            <Route path='/about' component={AboutPage} />
         </Router>
     </Provider>
 )
