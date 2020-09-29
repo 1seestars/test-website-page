@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import { reducer } from './store/reducers'
 import { createStore } from 'redux'
-import Root from './components/Root';
+import Root from './routing/Root';
 
 export const store = createStore(reducer)
 
